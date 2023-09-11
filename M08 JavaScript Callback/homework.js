@@ -54,10 +54,9 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
-   var nuevoArreglo = [];
-   for (i=0 ; i < array.length ; i++) {
-      nuevoArreglo[i] = cb(array[i]);
-   }
+   var nuevoArreglo = array.map(elemento => {
+      return cb(elemento);
+   });
    return nuevoArreglo;
 }
 
@@ -65,14 +64,8 @@ function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
-   var nuevoArreglo = [];
-   for (i=0 ; i < arrayOfStrings.length ; i++) {
-      var arrayDesarmado = arrayOfStrings[i].split("");
-      if (arrayDesarmado[0] === "a") {
-         nuevoArreglo.push(arrayOfStrings[i]);
-      };
-   }
-   return nuevoArreglo;
+   var filtrar = arrayOfStrings.filter((word) => word.startsWith("a"));
+   return filtrar;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
